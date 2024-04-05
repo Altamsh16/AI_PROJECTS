@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
         elif 'play music' in query:
             music_dir = 'C:\\Users\\HP\\Music\\Playlists'
-            songs = os.listdir(music_dir)
+            songs = [song for song in os.listdir(music_dir) if not song.endswith('.ini')]
             print(songs)    
             os.startfile(os.path.join(music_dir, songs[0]))
 
